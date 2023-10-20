@@ -1,5 +1,7 @@
 import React from "react";
 import Nav from "../nav";
+import Header from "../header";
+import CardPage from "../card-page";
 
 import "./app.css";
 
@@ -7,8 +9,11 @@ function App() {
     return (
         <>
             <div className="app">
-                <img className="logo" src="/img/sw_logo.webp"></img>
+                <Header></Header>
                 <Nav></Nav>
+                <section>
+                    <CardPage/>
+                </section>
             </div>
         </>
     );

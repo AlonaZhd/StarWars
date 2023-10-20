@@ -9,9 +9,10 @@
     color: white;
     background-color: transparent;
     transition: all 0.4s;
+    cursor: pointer;
 }
 
 .btn:hover {
-    border: 1px solid #ffee58;
-    color: #ffee58;
+    border: 1px solid #1976d2;
+    color: #1976d2;
 }

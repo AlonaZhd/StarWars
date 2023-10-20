@@ -1,0 +1,25 @@
+.card-element {
+    width: 17%;
+}
+
+.card-item {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+    transition: outline 0.4s;
+}
+
+.card-text {
+    padding: 12px;
+    border-radius: 0 0 4px 4px;
+    border: 1px solid white;
+    border-top-color: #333333;
+    transition: all 0.4s;
+    cursor: pointer;
+}
+
+.card-item:hover .card-text {
+    color: #1976d2;
+    border: 1px solid #1976d2;
+    border-top-color: #1976d2;
+}

@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import NavItem from "../nav-item";
-import request from '../../servises/data'
+import { request } from '../../servises/data'
 import Loader from "../loader";
 
 import "./nav.css";
@@ -11,14 +11,16 @@ class Nav extends Component {
     }
 
     componentDidMount(){
-        request.then((value) => {
-            this.setState((state) => {
-                return {
-                    data : value
-                }
+        request('https://swapi.dev/api/')
+            .then((res) => {
+                this.setState((state) => {
+                    return {
+                        data: res
+                    }
+                })
             })
-        })
     }
+
 
     render() {
         console.log(this.state)

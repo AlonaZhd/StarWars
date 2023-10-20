@@ -1,12 +1,11 @@
 import React from "react";
 import "./new.css";
 
-function New() {
+const New = () => {
     return (
-        <>
-            <div className="new"></div>
-        </>
-    );
+        <div className="new">
+        </div>
+    )
 }
 
 export default New;
