@@ -7,7 +7,7 @@ import "./header.css";
 function Header() {
     return (
             <div className="header">
-                <img className="logo" src={logo}></img>
+                <a href="/"><img className="logo" src={logo}></img></a>
                 <Search></Search>
             </div>
     );

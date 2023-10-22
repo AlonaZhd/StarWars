@@ -1,8 +1,5 @@
 .nav__item {
     display: block;
-}
-
-.btn {
     padding: 10px 30px;
     border-radius: 10px;
     border: 1px solid white;
@@ -12,7 +9,16 @@
     cursor: pointer;
 }
 
-.btn:hover {
+.nav__item a {
+    color: white;
+    transition: all 0.4s;
+}
+
+.nav__item:hover {
     border: 1px solid #1976d2;
+    color: #1976d2;
+}
+
+.nav__item:hover a {
     color: #1976d2;
 }

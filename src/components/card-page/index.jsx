@@ -11,7 +11,7 @@ class CardPage extends Component {
 
     componentDidMount(){
         console.log('componentDidMount');
-        request('https://swapi.dev/api/people/')
+        request(`https://swapi.dev/api/${this.props.url.url}/`)
             .then((res) => {
                 this.setState((state) => {
                     return {
@@ -37,19 +37,25 @@ class CardPage extends Component {
 
     render = () => {
         const { data, loader } = this.state;
-
         return (
-            <div className="card-page">
-                {   loader 
-                    ? data.results.map((e, item) => {
-                        return(
-                            // console.log('element', e)
-                            <CardElement key={item.id} name={e.name}></CardElement>
-                        )   
-                    })
-                    : <></>
-                }
-            </div>
+            <>
+                <h2 className="card-page__title">
+                    {this.props.url.url}
+                </h2>
+                <div className="card-page row row-cols-1 row-cols-md-5">
+
+
+                    {   loader 
+                        ? data.results.map((e, item) => {
+                            return(
+                                <CardElement key={item.id} img={`https://starwars-visualguide.com/assets/img/${this.props.url.img}/${item+1}.jpg`} name={e.name || e.title || e.classification}>
+                                </CardElement>
+                            )   
+                        })
+                        : <></>
+                    }
+                </div>
+            </>
         )        
     }
 

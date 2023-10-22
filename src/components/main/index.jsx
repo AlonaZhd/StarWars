@@ -1,12 +1,19 @@
 import React, { Component } from "react";
-import NavItem from "../nav-item";
 import { request } from '../../servises/data'
-
+import MainItem from "../main-item";
 import Loader from "../loader";
+import characterImage from './character.jpg';
+import filmsImage from './films.jpg';
+import speciesImage from './species.jpg';
+import planetsImage from './planets.jpg';
+import starshipsImage from './starships.jpg';
+import vehiclesImage from './vehicles.jpg';
 
-import "./nav.css";
+import "./main.css";
 
-class Nav extends Component {
+const imageArray = [characterImage, filmsImage, speciesImage, planetsImage, starshipsImage, vehiclesImage];
+
+class Main extends Component {
     state = {
         data : null
     }
@@ -26,25 +33,27 @@ class Nav extends Component {
     render() {
         // console.log(this.state)
         return (
-            <ul className="nav__list">
+            <div className="main__list">
                 {
                     this.state.data === null 
                     ? <Loader></Loader> 
                     : elements(this.state.data)
                 }
-            </ul>
+            </div>
         )
     }
 }
 
 function elements(el) {
-    let btn = []
+    // console.log(el)
+    let mainCards = []
 
     for (let e in el) {
-        btn.push(<NavItem name={e}></NavItem>)
+        console.log(e)
+        mainCards.push(<MainItem name={e} imgSrc={imageArray[mainCards.length]}></MainItem>)
     }
 
-    return btn
+    return mainCards
 }
 
-export default Nav;
+export default Main;

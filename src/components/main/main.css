@@ -1,0 +1,6 @@
+.main__list {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px 36px;
+    margin: 60px 0;
+}
